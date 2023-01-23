@@ -8,8 +8,9 @@ Créez votre boutique High tech en ligne
 >- Utilisation de l’architecture **REST** pour le développement de la partie Backend 
 >- Utilisation de la plateforme **ANGULAR** pour le développement de la partie Frontend.  
 >- Utilisez la librairie graphique **Bootstrap** pour obtenir l’interface suivante : 
+> 
+>![image](https://user-images.githubusercontent.com/48649017/214064883-dcf01485-3635-48ba-b73d-301014e52d48.png)
 
-recent:///58b39306d291f0cb5540f7ed63ce9972
 
 **Caractéristiques :**
 
