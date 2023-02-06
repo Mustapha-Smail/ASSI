@@ -27,7 +27,7 @@ public class Article {
 	public String getMarque() {
 		return marque;
 	}
-	public int getPrix() {
+	public int    getPrix() {
 		return prix;
 	}
 	public String getPhoto() {
