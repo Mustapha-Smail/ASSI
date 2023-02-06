@@ -1,6 +1,10 @@
 package projet.model;
 
+import java.util.ArrayList;
+
 public class Utilisateur extends User {
+	Panier panier;
+	ArrayList<Commande> commandes; 
 	
 	public Utilisateur(String identifiant, String password) {
 		super(identifiant, password); 
@@ -8,19 +12,16 @@ public class Utilisateur extends User {
 
 	@Override
 	public void ajouter(Article article) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void modifier(Article article) {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 	@Override
 	public void supprimer(Article article) {
-		// TODO Auto-generated method stub
 		
 	}
 

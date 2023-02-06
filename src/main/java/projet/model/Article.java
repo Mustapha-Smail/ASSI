@@ -1,44 +1,50 @@
-package projet.model;
+import java.net.URL;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Article {
-	
-	private String libelle; 
-	private String marque; 
-	private int prix; 
-	private String photo; 
-	
-	public Article() {}
-	
-	public Article(String libelle, String marque, int prix, String photo ) {
-		
-		this.libelle=libelle; 
-		this.marque=marque; 
-		this.prix=prix; 
-		this.photo=photo; 
-		
+    Categorie categorie;
+    String libelle; 
+    String marque; 
+    int prix;
+    URL photo;
+    
+	public Article(Categorie categorie, String libelle, String marque, int prix, URL photo) {
+		super();
+		this.categorie = categorie;
+		this.libelle = libelle;
+		this.marque = marque;
+		this.prix = prix;
+		this.photo = photo;
 	}
 	
+	
+	public Categorie getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
 	public String getLibelle() {
 		return libelle;
+	}
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
 	}
 	public String getMarque() {
 		return marque;
 	}
-	public int    getPrix() {
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+	public int getPrix() {
 		return prix;
 	}
-	public String getPhoto() {
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+	public URL getPhoto() {
 		return photo;
 	}
-
-	@Override
-	public String toString() {
-		return "Article [libelle=" + libelle + ", marque=" + marque + ", prix=" + prix + ", photo=" + photo + "]";
-	}
-	
-	
-	
+	public void setPhoto(URL photo) {
+		this.photo = photo;
+	} 
 }
