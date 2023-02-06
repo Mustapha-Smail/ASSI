@@ -1,5 +1,8 @@
 package projet.model;
 
-public class Panier {
+import java.util.ArrayList;
 
+public class Panier {
+    ArrayList<Article> articles; 
+    int prixTotal; 
 }

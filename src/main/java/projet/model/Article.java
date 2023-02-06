@@ -8,11 +8,11 @@ public class Article {
 	private String libelle; 
 	private String marque; 
 	private int prix; 
-	private String photo;
+	private String photo; 
 	
 	public Article() {}
 	
-	public Article(String libelle, String marque, int prix, String photo) {
+	public Article(String libelle, String marque, int prix, String photo ) {
 		
 		this.libelle=libelle; 
 		this.marque=marque; 
@@ -37,7 +37,7 @@ public class Article {
 	@Override
 	public String toString() {
 		return "Article [libelle=" + libelle + ", marque=" + marque + ", prix=" + prix + ", photo=" + photo + "]";
-	} 
+	}
 	
 	
 	
