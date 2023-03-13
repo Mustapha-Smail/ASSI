@@ -16,18 +16,23 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
 import projet.model.Article;
+import projet.service.ArticleService;
 
 
 
-@Path("/articles")
-public class Articles {
+@Path("/article")
+public class ArticleResource {
+	
+	final ArticleService arts= new ArticleService(); 
 
     // Return the list of Articles to the user in the browser
     @GET
+    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getArticlesBrowser(){
+    public Article getArticleDetails(@PathParam("id") int id){
     	//
-    	return "hello"; 
+    	return arts.getArticleById(id);
+    	
     }
 	
 	

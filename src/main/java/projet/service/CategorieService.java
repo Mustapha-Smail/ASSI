@@ -5,15 +5,20 @@ import java.util.List;
 
 import projet.dao.CategorieDAO;
 import projet.model.Article;
+import projet.model.Categorie;
 
 public class CategorieService {
 	
-	public CategorieService(){}
+	private CategorieDAO catDao = new CategorieDAO(); 
 	
-	public List<Article> getArticlesById(int id) {
-		CategorieDAO catDao = new CategorieDAO(); 
-		
-		return catDao.getArticlesById(id); 
+	public CategorieService(){}
+
+	public List<Categorie> getCategories() {
+		return catDao.getCategories(); 
+	}
+	
+	public List<Article> getArticlesByCategoryId(int id) {
+		return catDao.getArticlesByCategoryId(id); 
 	}
 
 }

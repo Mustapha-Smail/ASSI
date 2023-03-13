@@ -9,6 +9,7 @@ import java.util.List;
 
 import projet.config.DB;
 import projet.model.Article;
+import projet.model.Categorie;
 
 public class CategorieDAO {
 	
@@ -19,7 +20,44 @@ public class CategorieDAO {
 		db = new DB(); 
 	}
 	
-	public List<Article> getArticlesById(int id) {
+public List<Categorie> getCategories() {
+		
+		this.db.connection();
+		
+		Connection conn = db.getConn();
+		
+		List<Categorie> categories = new ArrayList<Categorie>(); 
+		
+		try {
+			
+			requete = conn.prepareStatement("SELECT * from categorie WHERE upCategorie is null");
+			
+			ResultSet rs = requete.executeQuery(); 
+			while (rs.next()) {
+				
+				int idCategorie = rs.getInt("idCategorie"); 
+				String libelle = rs.getString("libelle"); 
+				
+				Categorie categorie = new Categorie(libelle, idCategorie); 
+				
+				categories.add(categorie); 
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+		this.db.deconnection();
+		
+		return categories;
+		
+	}
+	
+	public List<Article> getArticlesByCategoryId(int id) {
 		
 		this.db.connection();
 		
@@ -56,6 +94,8 @@ public class CategorieDAO {
 		
 		
 		this.db.deconnection();
+		
+		System.out.println(articles);
 		
 		return articles;
 		

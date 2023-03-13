@@ -12,12 +12,13 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.UriInfo;
 
 import projet.model.Article;
+import projet.model.Categorie;
 import projet.service.CategorieService;
 
 
 
-@Path("/categorie")
-public class Categorie {
+@Path("/categories")
+public class CategorieResource {
 
 	// Allows to insert contextual objects into the class,
     // e.g. ServletContext, Request, Response, UriInfo
@@ -31,18 +32,19 @@ public class Categorie {
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getArticlesBrowser(){
+    public List<Categorie> getCategories(){
     	//
-    	return "hello"; 
+    	return cts.getCategories(); 
     }
 
     // Return the list of Articles to the user in the browser
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Article> getArticlesBrowser(@PathParam("id") int id){
+    public List<Article> getArticlesByCategoryId(@PathParam("id") int id){
     	//
-    	return cts.getArticlesById(id);
+    	System.out.println(id);
+    	return cts.getArticlesByCategoryId(id);
     	
     }
     
