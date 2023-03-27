@@ -23,7 +23,8 @@ public class DB {
 		
     	try{  
     		Class.forName("com.mysql.jdbc.Driver");
-            setConn(DriverManager.getConnection("jdbc:mysql://localhost/assi", "root", "password")); 
+            //setConn(DriverManager.getConnection("jdbc:mysql://localhost/assi", "root", "password")); 
+            setConn(DriverManager.getConnection("jdbc:mysql://localhost/assi?user=root&password=password" + "&userUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetime=false&serverTimezone=UTC"));
            
         }
         catch (Exception e){

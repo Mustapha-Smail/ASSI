@@ -73,14 +73,14 @@ public List<Categorie> getCategories() {
 			ResultSet rs = requete.executeQuery(); 
 			while (rs.next()) {
 				
-				//int idArticle = rs.getInt("idArticle");
+				int idArticle = rs.getInt("idArticle");
 				//int idCategorie = rs.getInt("idCategorie"); 
 				String libelle = rs.getString("libelle"); 
 				String marque = rs.getString("marque"); 
 				int prix = rs.getInt("prix"); 
 				String photo = rs.getString("photo"); 
 				
-				Article article = new Article(libelle, marque, prix, photo); 
+				Article article = new Article(idArticle, libelle, marque, prix, photo); 
 				
 				articles.add(article); 
 				

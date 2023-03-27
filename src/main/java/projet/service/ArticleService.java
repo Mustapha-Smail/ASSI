@@ -7,11 +7,18 @@ import projet.model.Article;
 
 public class ArticleService {
 	
+	private ArticleDAO artDao = new ArticleDAO(); 
+	
 	public ArticleService() {}
 	
 	public Article getArticleById(int id) {
-		ArticleDAO artDao = new ArticleDAO(); 
 		
 		return artDao.getArticleDetails(id); 
+	}
+	
+
+	public List<Article> getArticlesByCategory(int idCategorie) {
+		
+		return artDao.getArticlesByCategory(idCategorie); 
 	}
 }

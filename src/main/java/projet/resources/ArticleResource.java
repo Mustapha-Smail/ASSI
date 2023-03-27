@@ -22,7 +22,13 @@ import projet.service.ArticleService;
 
 @Path("/article")
 public class ArticleResource {
-	
+	// Allows to insert contextual objects into the class,
+    // e.g. ServletContext, Request, Response, UriInfo
+    @Context
+    UriInfo uriInfo;
+    @Context
+    Request request;
+    
 	final ArticleService arts= new ArticleService(); 
 
     // Return the list of Articles to the user in the browser
@@ -35,6 +41,16 @@ public class ArticleResource {
     	
     }
 	
+
+    // Return the list of Articles to the user in the browser
+    @GET
+    @Path("categorie/{idCategorie}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Article> getCategoryArticles(@PathParam("idCategorie") int idCategorie){
+    	//
+    	return arts.getArticlesByCategory(idCategorie);
+    	
+    }
 	
 	
 }

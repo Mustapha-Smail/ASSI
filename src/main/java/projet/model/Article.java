@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Article {
 	
+	private int idArticle; 
 	private String libelle; 
 	private String marque; 
 	private int prix; 
@@ -12,8 +13,9 @@ public class Article {
 	
 	public Article() {}
 	
-	public Article(String libelle, String marque, int prix, String photo ) {
+	public Article(int idArticle, String libelle, String marque, int prix, String photo ) {
 		
+		this.idArticle=idArticle; 
 		this.libelle=libelle; 
 		this.marque=marque; 
 		this.prix=prix; 
@@ -33,12 +35,14 @@ public class Article {
 	public String getPhoto() {
 		return photo;
 	}
+	
+	public int getIdArticle() {
+		return idArticle;
+	}
 
 	@Override
 	public String toString() {
 		return "Article [libelle=" + libelle + ", marque=" + marque + ", prix=" + prix + ", photo=" + photo + "]";
 	}
-	
-	
 	
 }
