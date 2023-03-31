@@ -21,4 +21,16 @@ public class ArticleService {
 		
 		return artDao.getArticlesByCategory(idCategorie); 
 	}
+	
+	public Article editArticle(int idArticle, String libelle, String marque, int prix, String photo ) {
+		return artDao.editArticle(idArticle, libelle, marque, prix, photo); 
+	}
+	
+	public int deleteArticle(int idArticle) {
+		return artDao.deleteArticle(idArticle); 
+	}
+	
+	public int addArticle(int idCategorie, String libelle, String marque, int prix, String photo) {
+		return artDao.addArticle(idCategorie, libelle, marque, prix, photo); 
+	}
 }

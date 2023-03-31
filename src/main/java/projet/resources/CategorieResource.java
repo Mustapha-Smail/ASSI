@@ -36,6 +36,15 @@ public class CategorieResource {
     	//
     	return cts.getCategories(); 
     }
+    
+
+    @GET
+    @Path("/sub")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Categorie> getSubCategories(){
+    	//
+    	return cts.getSubCategories(); 
+    }
 
     // Return the list of Articles to the user in the browser
     @GET

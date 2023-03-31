@@ -20,7 +20,7 @@ public class CategorieDAO {
 		db = new DB(); 
 	}
 	
-public List<Categorie> getCategories() {
+	public List<Categorie> getCategories() {
 		
 		this.db.connection();
 		
@@ -39,6 +39,45 @@ public List<Categorie> getCategories() {
 				String libelle = rs.getString("libelle"); 
 				
 				Categorie categorie = new Categorie(libelle, idCategorie); 
+				
+				categories.add(categorie); 
+				
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+		this.db.deconnection();
+		
+		return categories;
+		
+	}
+	
+
+	public List<Categorie> getSubCategories() {
+		
+		this.db.connection();
+		
+		Connection conn = db.getConn();
+		
+		List<Categorie> categories = new ArrayList<Categorie>(); 
+		
+		try {
+			
+			requete = conn.prepareStatement("SELECT * from categorie WHERE upCategorie is not null");
+			
+			ResultSet rs = requete.executeQuery(); 
+			while (rs.next()) {
+				
+				int idCategorie = rs.getInt("idCategorie"); 
+				int upCategorie = rs.getInt("upCategorie"); 
+				String libelle = rs.getString("libelle"); 
+				
+				Categorie categorie = new Categorie(libelle, idCategorie, upCategorie); 
 				
 				categories.add(categorie); 
 				

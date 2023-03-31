@@ -11,6 +11,9 @@ public abstract class User {
 		this.password=password; 
 	}
 	
+	public String getIdentifiant() { return this.identifiant; }
+	public String getPassword() { return this.password; }
+	
 	public boolean connexion(String identifiant, String password) {
 		return this.identifiant.equals(identifiant) && this.password.equals(password); 
 	};

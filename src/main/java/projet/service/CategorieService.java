@@ -17,6 +17,10 @@ public class CategorieService {
 		return catDao.getCategories(); 
 	}
 	
+	public List<Categorie> getSubCategories() {
+		return catDao.getSubCategories(); 
+	}
+	
 	public List<Article> getArticlesByCategoryId(int id) {
 		return catDao.getArticlesByCategoryId(id); 
 	}
